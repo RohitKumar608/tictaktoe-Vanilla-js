@@ -61,6 +61,7 @@ function showTieOrWinner(result, winner) {
   if (result === 'tie') {
     winnerEl.style.display = 'block'
     resultEl.innerText = `The match was tie, please play again `
+    resetBtnList.innerText = 'Play again'
   }
   if (result === 'win') {
     const firepowerEl = document.getElementById('firepower')
@@ -68,6 +69,7 @@ function showTieOrWinner(result, winner) {
     winnerEl.style.display = 'block'
     resultEl.innerText = `The winner of the Game is : ${winner}`
     document.querySelector('body').classList.add('winner')
+    resetBtnList.innerText = 'Play again'
   }
 }
 
@@ -91,6 +93,7 @@ function updateTicTacToeMatrix(evt) {
   const firepowerEl = document.getElementById('firepower')
   firepowerEl.style.display = 'none'
   document.querySelector('body').classList.remove('winner')
+  resetBtnList.innerText = 'Restart'
 }
 
 inputEl.addEventListener('change', updateTicTacToeMatrix)
