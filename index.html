@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="App">
+      <header class="App-header">Tic Tac Toe</header>
+      <div class="app-container">
+        <div class="game-container">
+          <div id="tie" class="display_none">
+            <h2>The Match is Tie</h2>
+            <button class="submit tie-restart">Restart</button>
+          </div>
+
+          <div id="firepower" class="display_none">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+          </div>
+
+          <div id="winner" class="display_none">
+            <h2 id="result"></h2>
+            <button class="submit win-restart">Restart</button>
+          </div>
+
+          <div id="tictacktoe" class="tictacktoe-container">
+            <div class="display__grid"></div>
+          </div>
+
+          <div class="winner-btn-container display_none">
+            <button class="submit">Previous</button>
+            <button class="submit">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./utils.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
