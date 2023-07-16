@@ -24,12 +24,14 @@ body {
   color: white;
   text-align: center;
   border: 2px solid white;
-  padding: 0.2rem;
-  margin-top: 0.2rem;
 }
 
 .input-container {
-  display: inline-grid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
 }
 input {
@@ -74,6 +76,7 @@ h2 {
   background: aquamarine;
   color: black;
   font-weight: bold;
+  border: 1px solid gray;
 }
 
 .winner-btn-container {

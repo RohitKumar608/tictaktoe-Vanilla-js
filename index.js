@@ -16,6 +16,7 @@ function renderButtons(gridArray, winnerIdx) {
   gridDivEle.innerHTML = ''
   gridArray.forEach((val, idx) => {
     const btn = document.createElement('button')
+    // if user wins the game then highlight the column
     if (winnerArr.includes(idx)) {
       btn.classList.add('winner-grid')
     }
@@ -28,6 +29,7 @@ function renderButtons(gridArray, winnerIdx) {
 
 gridDivEle.addEventListener('click', (evt) => {
   const id = evt.target.dataset.id
+  // if user win the game, cell was filled or all the cells are filled the return
   if (gridArray[id] || winnerIs || filledGrid === row * row) {
     return
   }
@@ -36,6 +38,7 @@ gridDivEle.addEventListener('click', (evt) => {
 
   filledGrid++
   const { winner, idx } = getWinner(gridArray, winnerCombArr)
+  // check for the winner or game is tie
   winnerIs = winner
   showTieOrWinner(
     filledGrid === row * row && !winner ? 'tie' : winner ? 'win' : '',
@@ -74,6 +77,7 @@ function reset() {
 
 renderButtons(gridArray)
 
+// reset the all the variables to initial state
 function updateTicTacToeMatrix(evt) {
   const { winnerEl } = getWinnerElement()
   winnerEl.style.display = 'none'
