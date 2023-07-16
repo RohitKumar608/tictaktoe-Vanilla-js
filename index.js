@@ -1,13 +1,15 @@
 import { generateTicTacToeWinnerComb, getWinner, createArr } from './utils.js'
-const row = 3
+var row = 3
 var nextUser = 0
 var filledGrid = 0
 var winnerIs = ''
-const winnerCombArr = generateTicTacToeWinnerComb(row)
+var winnerCombArr = generateTicTacToeWinnerComb(row)
 const gridDivEle = document.querySelector('.display__grid')
+const inputEl = document.querySelector('#matrix-input')
+
 gridDivEle.style.gridTemplateColumns = `repeat(${row}, 1fr)`
 
-const gridArray = createArr(row)
+var gridArray = createArr(row)
 
 function renderButtons(gridArray) {
   gridDivEle.innerHTML = ''
@@ -58,3 +60,14 @@ function reset() {
 }
 
 renderButtons(gridArray)
+
+function updateTicTacToeMatrix(evt) {
+  row = +evt.target.value
+  gridDivEle.style.gridTemplateColumns = `repeat(${row}, 1fr)`
+  gridArray = createArr(row)
+  renderButtons(gridArray)
+  winnerCombArr = generateTicTacToeWinnerComb(row)
+  winnerIs = ''
+}
+
+inputEl.addEventListener('change', updateTicTacToeMatrix)

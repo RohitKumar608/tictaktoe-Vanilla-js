@@ -24,10 +24,7 @@ body {
 }
 
 .input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  display: inline-grid;
   margin-top: 1rem;
 }
 input {
@@ -49,6 +46,10 @@ input {
 .app-container {
   width: 600px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .tictacktoe-container {
